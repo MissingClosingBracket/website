@@ -30,15 +30,3 @@ a, a:visited {
     color: var(--blue);
 }
 
-.nav_button:active {
-    color: var(--green);
-}
-
-.nav_item_profile {
-    color: var(--light_blue);
-    font-size: calc(25px + 0.5vw);
-}
-
-.nav_item_profile:hover {
-    color: var(--blue);
-}
