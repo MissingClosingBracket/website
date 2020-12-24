@@ -1,8 +1,44 @@
+:root {
+    --blue: rgba(6, 71, 137, 1);
+    --light_blue: rgba(66, 122, 161, 1);
+    --very_light_blue: rgba(235, 242, 250, 1);
+    --green: rgba(103, 148, 54, 1);
+    --ligh_green: rgba(165, 190, 0, 1);
+}
+
+body {
+    margin: 2%;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+
 .nav_bar {
     display: flex;
     justify-content: space-between;
 }
 
-.nav_item {
-    color: red;
+
+.nav_button {
+    color: var(--light_blue);
+    font-size: calc(25px + 0.5vw);
+}
+
+.nav_button:hover {
+    color: var(--blue);
+}
+
+.nav_button:active {
+    color: var(--green);
+}
+
+.nav_item_profile {
+    color: var(--light_blue);
+    font-size: calc(25px + 0.5vw);
+}
+
+.nav_item_profile:hover {
+    color: var(--blue);
 }
