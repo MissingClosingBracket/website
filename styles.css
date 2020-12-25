@@ -49,35 +49,56 @@ a, a:visited {
 }
 
 .content_item {
+    width: calc(320px + 6vw);
+    height: calc(320px + 6vw);
+    margin: 2%;
+    text-align: center;
+    position: relative;
+}
+
+.content_image {
     background-image: url("images/portfolio1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: calc(320px + 6vw);
     height: calc(320px + 6vw);
     margin: 2%;
-    text-align: center;
 }
 
 .content_item:hover .content_text {
     visibility: visible;
+    animation: fadeIn 0.2s;
 }
 
-.content_item:hover {
-    opacity: 0.9;
+@keyframes fadeIn{
+    0%{opacity:0;} 
+    10%{opacity:0.1;}
+    10%{opacity:0.2;}
+    20%{opacity:0.3;}
+    30%{opacity:0.4;}
+    40%{opacity:0.5;}
+    50%{opacity:0.6;} 
+    60%{opacity:0.7;}
+    80%{opacity:0.8;}
+    90%{opacity:0.9;}
+    100%{opacity:1;}
 }
 
-.content_text {
+
+.content_item:hover .content_image{
+    filter: brightness(50%);
+}
+
+.content_text{
     color: var(--very_light_blue);
     visibility: hidden;
-    padding-top: 65%;
     font-size: calc(15px + 0.3vw);
     padding-left: 2%;
     padding-right: 2%;
+    position: absolute;  
+    left: 50%;                        
+    top: 50%;                         
+    transform: translate(-50%, -50%);
 }
 
 
-.item_picture {
-    height: calc(320px + 8vw);
-    width: calc(320px + 8vw);
-    margin: 1vw;
-}
