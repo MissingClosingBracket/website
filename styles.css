@@ -3,7 +3,7 @@
     --light_blue: rgba(66, 122, 161, 1);
     --very_light_blue: rgba(235, 242, 250, 1);
     --green: rgba(103, 148, 54, 1);
-    --ligh_green: rgba(165, 190, 0, 1);
+    --light_green: rgba(165, 190, 0, 1);
 }
 
 body {
@@ -49,8 +49,35 @@ a, a:visited {
 }
 
 .content_item {
-    width: calc(340px + 9vw);
-    height: calc(340px + 9vw);
-    justify-content: center;
+    background-image: url("images/portfolio1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: calc(320px + 6vw);
+    height: calc(320px + 6vw);
+    margin: 2%;
     text-align: center;
+}
+
+.content_item:hover .content_text {
+    visibility: visible;
+}
+
+.content_item:hover {
+    opacity: 0.9;
+}
+
+.content_text {
+    color: var(--very_light_blue);
+    visibility: hidden;
+    padding-top: 65%;
+    font-size: calc(15px + 0.3vw);
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+.item_picture {
+    height: calc(320px + 8vw);
+    width: calc(320px + 8vw);
+    margin: 1vw;
 }
