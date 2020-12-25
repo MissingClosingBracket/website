@@ -40,3 +40,17 @@ a, a:visited {
     border: 0;
     background-color: var(--very_light_blue);
 }
+
+/* Home portfolio styles */
+.content_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content_item {
+    width: calc(340px + 9vw);
+    height: calc(340px + 9vw);
+    justify-content: center;
+    text-align: center;
+}

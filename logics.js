@@ -19,4 +19,5 @@ function changeStyleOnLoad() {
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
 
+
 }
