@@ -8,6 +8,7 @@
 
 body {
     margin: 2%;
+    padding-bottom: 2%;
 }
 
 a, a:visited {
@@ -34,6 +35,7 @@ a, a:visited {
 
 .hr_nav_bar {
     margin-top: 1.5vw;
+    margin-bottom: 1%;
     width: 100%;
     display: block;
     height: calc(3px + 0.01vw);
@@ -57,9 +59,7 @@ a, a:visited {
 }
 
 .content_image {
-    background-image: url("images/portfolio1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    object-fit: cover;
     width: calc(320px + 6vw);
     height: calc(320px + 6vw);
     margin: 2%;
@@ -72,15 +72,25 @@ a, a:visited {
 
 @keyframes fadeIn{
     0%{opacity:0;} 
+    5%{opacity:0.05;} 
     10%{opacity:0.1;}
-    10%{opacity:0.2;}
-    20%{opacity:0.3;}
-    30%{opacity:0.4;}
-    40%{opacity:0.5;}
-    50%{opacity:0.6;} 
-    60%{opacity:0.7;}
+    15%{opacity:0.15;}
+    20%{opacity:0.2;}
+    25%{opacity:0.25;}
+    30%{opacity:0.3;}
+    35%{opacity:0.35;}
+    40%{opacity:0.4;}
+    45%{opacity:0.45;}
+    50%{opacity:0.5;} 
+    55%{opacity:0.55;} 
+    60%{opacity:0.6;}
+    65%{opacity:0.65;}
+    70%{opacity:0.7}
+    75%{opacity:0.75;}
     80%{opacity:0.8;}
+    85%{opacity:0.85;}
     90%{opacity:0.9;}
+    95%{opacity:0.95;}
     100%{opacity:1;}
 }
 
