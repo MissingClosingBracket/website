@@ -4,7 +4,7 @@ function changeStyleOnLoad() {
 
     var page = window.location.href;
 
-    if (page.includes("home")) {
+    if (page.includes("index")) {
         var elem = document.getElementById("button_1");
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
