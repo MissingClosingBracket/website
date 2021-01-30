@@ -9,7 +9,7 @@ function changeStyleOnLoad() {
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
 
-    if (page.includes("chatz")) {
+    if (page.includes("covid19")) {
         var elem = document.getElementById("button_2");
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
