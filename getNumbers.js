@@ -110,7 +110,12 @@ function organizeSummary(jsonObject)
     console.log("   USA total deaths:          " + USA.get('TotalDeaths'));
 
 
-    document.getElementById("global").innerHTML = "Total confirmed world wide: " + GLOBAL.get('TotalConfirmed') + " Total deaths world wide: " + GLOBAL.get('TotalDeaths');
+    document.getElementById("global").innerHTML  = "Total confirmed: <br>" + GLOBAL.get('TotalConfirmed')  + '<br> <br>' + "Total deaths: <br>" + GLOBAL.get('TotalDeaths');
+    document.getElementById("denmark").innerHTML = "Total confirmed: <br>" + DENMARK.get('TotalConfirmed') + '<br> <br>' + "Total deaths: <br>" + DENMARK.get('TotalDeaths');
+    document.getElementById("sweden").innerHTML  = "Total confirmed: <br>" + SWEDEN.get('TotalConfirmed')  + '<br> <br>' + "Total deaths: <br>" + SWEDEN.get('TotalDeaths');
+    document.getElementById("norway").innerHTML  = "Total confirmed: <br>" + NORWAY.get('TotalConfirmed')  + '<br> <br>' + "Total deaths: <br>" + NORWAY.get('TotalDeaths');
+    document.getElementById("germany").innerHTML = "Total confirmed: <br>" + GERMANY.get('TotalConfirmed') + '<br> <br>' + "Total deaths: <br>" + GERMANY.get('TotalDeaths');
+    document.getElementById("usa").innerHTML     = "Total confirmed: <br>" + USA.get('TotalConfirmed')     + '<br> <br>' + "Total deaths: <br>" + USA.get('TotalDeaths');
 }
 
 
