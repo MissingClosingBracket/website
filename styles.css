@@ -80,6 +80,18 @@ a, a:visited {
     filter: brightness(50%);
 }
 
+.content_stats_text{
+    color: var(--very_light_blue);
+    visibility: hidden;
+    font-size: calc(15px + 0.3vw);
+    padding-left: 2%;
+    padding-right: 2%;
+    position: absolute;  
+    left: 50%;                        
+    top: 50%;                         
+    transform: translate(-50%, -50%);
+}
+
 .content_text{
     color: var(--very_light_blue);
     visibility: hidden;

@@ -110,8 +110,7 @@ function organizeSummary(jsonObject)
     console.log("   USA total deaths:          " + USA.get('TotalDeaths'));
 
 
-    document.getElementById("global1").innerHTML = "Total confirmed: " + GLOBAL.get('TotalConfirmed');
-    document.getElementById("global2").innerHTML = "Total Deaths: " + GLOBAL.get('TotalDeaths');
+    document.getElementById("global").innerHTML = "Total confirmed world wide: " + GLOBAL.get('TotalConfirmed') + " Total deaths world wide: " + GLOBAL.get('TotalDeaths');
 }
 
 
