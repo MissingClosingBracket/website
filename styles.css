@@ -70,6 +70,10 @@ a, a:visited {
     animation: fadeIn 0.25s;
 }
 
+.content_item:hover .content_title {
+    visibility: hidden;
+}
+
 
 
 @keyframes fadeIn{
@@ -80,6 +84,18 @@ a, a:visited {
 
 .content_item:hover .content_image{
     filter: brightness(50%);
+}
+
+.content_title{
+    color: var(--very_light_blue);
+    visibility: visible;
+    font-size: calc(20px + 0.3vw);
+    padding-left: 2%;
+    padding-right: 2%;
+    position: absolute;  
+    left: 20%;                        
+    top: 95%;                         
+    transform: translate(-50%, -50%);
 }
 
 
