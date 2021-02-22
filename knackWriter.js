@@ -1,10 +1,10 @@
-import sjcl from 'sjcl'
 
-function logInTry() {
+
+async function logIn(pass,mail) {
+    email = mail
+    password = await sha256(pass)
     var dataInc;
-    const passBitArray = sjcl.hash.sha256.hash(password)
-    const passHash = sjcl.codec.hex.fromBits(passBitArray)
-    console.log(passHash)
+    console.log(password)
     api_url = "https://api.knack.com/v1/objects/object_1/records"
     var filters = [
         {
@@ -58,4 +58,19 @@ function knack(email,pass) {
     .catch((error) => {
       console.error('Error:', error);
     });
+}
+
+async function sha256(message) {
+  // encode as UTF-8
+  const msgBuffer = new TextEncoder().encode(message);                    
+
+  // hash the message
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+
+  // convert ArrayBuffer to Array
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+  // convert bytes to hex string                  
+  const hashHex = hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
+  return hashHex;
 }
