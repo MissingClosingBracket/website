@@ -14,8 +14,13 @@ function changeStyleOnLoad() {
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
 
-    if (page.includes("profile")) {
+    if (page.includes("news")) {
         var elem = document.getElementById("button_3");
+        elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
+    }
+
+    if (page.includes("profile")) {
+        var elem = document.getElementById("button_4");
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
 

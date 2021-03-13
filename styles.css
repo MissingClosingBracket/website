@@ -33,6 +33,10 @@ a, a:visited {
     padding-right: calc(10px + 1vw);
 }
 
+#button_2 {
+    padding-right: calc(10px + 1vw);
+}
+
 .hr_nav_bar {
     margin-top: 1.5vw;
     margin-bottom: 1%;
