@@ -19,7 +19,7 @@ function changeStyleOnLoad() {
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
 
-    if (page.includes("profile")) {
+    if (page.includes("cv")) {
         var elem = document.getElementById("button_4");
         elem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--green');
     }
