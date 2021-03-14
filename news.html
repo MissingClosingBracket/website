@@ -7,7 +7,7 @@
         <script type="text/javascript" src="logics.js"></script>
         <script type="text/javascript" src="news.js"></script>
     </head>
-    <body onload="changeStyleOnLoad(); getNews1()">
+    <body onload="changeStyleOnLoad(); setDate()">
         <div class="nav_bar">
             <div class="nav_bar_item">
                 <a id="button_1" class="nav_button" href="index.html">Home_</a>
@@ -132,6 +132,16 @@
                             <option value="us">United States</option>
                             <option value="ve">Venezuela</option>
                         </select>
+                    </form>
+                </div>
+                <div class="content_item_search">
+                    <form id="date">
+                        <label>Choose one specific date or an interval:</label><br>
+                        <label for="date1">Start date</label>
+                        <input type="date" id="date1" name="date1" value="" onchange="setDate2()">
+                        <br>
+                        <label for="date2">End date</label>
+                        <input type="date" id="date2" name="date2" value="">
                     </form>
                 </div>
             </div>

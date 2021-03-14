@@ -75,13 +75,27 @@ function options_submitted() {
               }
        }
 
+       //get the date(s) selected
+       //TODO!
+
        if (valid) {
               console.log("search: " + search)
        }
 }
 
-function getNews1() {
-       console.log("getNews1")
+function setDate() {
+       var today = new Date();
+       var dd = String(today.getDate()).padStart(2, '0');
+       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+       var yyyy = today.getFullYear();
+       today = yyyy + '-' + mm + '-' + dd;
+
+       document.getElementById("date1").value = today;
+       document.getElementById("date2").value = today;
+}
+
+function setDate2() {
+       document.getElementById("date2").value = document.getElementById("date1").value;
 }
 
 
