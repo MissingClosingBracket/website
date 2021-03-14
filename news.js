@@ -15,9 +15,14 @@ async function getNews() {
 function options_submitted() {
        //build this string
        var search = "";
+       var valid = 1;
 
        //get the keyword if it exists
        const keyword = new FormData(document.getElementById('keyword'))
+       if ((keyword.values().next().value).toLowerCase().includes(' ')) {
+              alert("You can have only one (!) keyword. No spaces allowed.")
+              valid = 0;
+       }
        if (keyword.values().next().value != "") {
               search += "&keyword=" + keyword.values().next().value;
        }
@@ -58,10 +63,21 @@ function options_submitted() {
               }
        }
 
-       console.log("search: " + search)
+       //get the countries selected
+       const countries = new FormData(document.getElementById("countries"))
+       var countries_counter = 0;
+       if (countries.values().next().value != undefined) {
+              for (var c of countries.values()) {
+                     if (countries_counter == 0) {
+                            search += "&countries=" + c.toLowerCase();
+                            countries_counter++;
+                     } else search += "," + c.toLowerCase();
+              }
+       }
 
-
-
+       if (valid) {
+              console.log("search: " + search)
+       }
 }
 
 function getNews1() {
@@ -84,11 +100,11 @@ function getNews1() {
  ** Sources: "&sources=cnn,-bbc"
         no listing available.. will make own? TODO
 
- * Countries: "&countries=ar,br,-ro"
+ ** Countries: "&countries=ar,br,-ro"
         list: ar,au,at,be,br,bg,ca,cn,co,cz,eg,fr,de,gr,hk,hu,in,id,ie,il,it,jp,lv,lt,my,mx,ma,nl,
               nz,ng,no,ph,pl,pt,ro,sa,rs,sg,sk,si,za,kr,se,ch,tw,th,tr,ae,ua,gb,us,ve
  
- * Languages: "&languages=ar,en,-no"
+ ** Languages: "&languages=ar,en,-no"
         ar - Arabic
         de - German
         en - English
