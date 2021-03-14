@@ -12,14 +12,16 @@ function loadSummary ()
 {
     var requestOptions = {
         method: 'GET',
-        redirect: 'follow'
+        redirect: 'follow',
+        'Access-Control-Allow-Origin': '*',
+        origin: "https://documenter.getpostman.com/view/10808728/SzS8rjbc"
       };
       //https://documenter.getpostman.com/view/10808728/SzS8rjbc
       
       fetch("https://api.covid19api.com/summary", requestOptions)
         .then(response => response.text())
         .then(result => organizeSummary(result))
-        .catch(error => alert(error));
+        .catch(error => alert("Sometimes this API is down. The numbers are also off... Try again in a couple of minutes. The error returned was: " + error));
     
 
     //console.log(result)    

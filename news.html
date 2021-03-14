@@ -7,7 +7,7 @@
         <script type="text/javascript" src="logics.js"></script>
         <script type="text/javascript" src="news.js"></script>
     </head>
-    <body onload="changeStyleOnLoad(); getNews()">
+    <body onload="changeStyleOnLoad(); getNews1()">
         <div class="nav_bar">
             <div class="nav_bar_item">
                 <a id="button_1" class="nav_button" href="index.html">Home_</a>
@@ -19,6 +19,64 @@
             </div>
         </div>
         <hr class="hr_nav_bar">
+            <div class="content_wrapper">
+                <div class="content_item_search">
+                    <form id="keyword">
+                        <label for="keyword">Search news articles with a keyword:</label><br>
+                        <input type="text" id="keyword" name="keyword">
+                    </form>
+                </div>
+                <div class="content_item_search">
+                    <form id="categories">
+                        <label>Choose one or more categories:</label><br>
+                        <input type="checkbox" id="category_general" name="category_general" value="General">
+                        <label for="category_general">General</label>
+                        <input type="checkbox" id="category_business" name="category_business" value="Business">
+                        <label for="category_business">Business</label>
+                        <input type="checkbox" id="category_entertainment" name="category_entertainment" value="Entertainment">
+                        <label for="category_entertainment">Entertainment</label>
+                        <br>
+                        <input type="checkbox" id="category_sports" name="category_sports" value="Sports">
+                        <label for="category_sports">Sports</label>
+                        <input type="checkbox" id="category_health" name="category_health" value="Health">
+                        <label for="category_health">Health</label>
+                        <input type="checkbox" id="category_science" name="category_science" value="Science">
+                        <label for="category_science">Science</label>
+                        <input type="checkbox" id="category_technology" name="category_technology" value="Technology">
+                        <label for="category_technology">Technology</label>
+                    </form>
+                </div>
+                <div class="content_item_search">
+                    <form id="sources">
+                        <label>Choose one or more sources:</label><br>
+                        <input type="checkbox" id="sources_cnn" name="sources_cnn" value="CNN">
+                        <label for="sources_cnn">CNN</label>
+                        <input type="checkbox" id="sources_bbc" name="sources_bbc" value="BBC">
+                        <label for="sources_bbc">BBC</label>
+                    </form>
+                </div>
+                <div class="content_item_search">
+                    <form id="languages">
+                        <label>Choose one or more languages:</label><br>
+                        <select multiple id="languages_select" name="languages_select">
+                            <option value="ar">Arabic</option>
+                            <option value="de">German</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="he">Hebrew</option>
+                            <option value="it">Italian</option>
+                            <option value="nl">Dutch</option>
+                            <option value="no">Norwegian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="ru">Russian</option>
+                            <option value="se">Swedish</option>
+                            <option value="zh">Chinese</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <button class="search_button" onclick="options_submitted()">Søg</button>
         <hr class="hr_nav_bar">
         <p>hej</p>
         <p>hej</p>
