@@ -76,29 +76,59 @@ function options_submitted() {
        }
 
        //get the date(s) selected
-       //TODO!
+       const dates = new FormData(document.getElementById("date"));
+       var date_start;
+       var date_end;
+       var date_counter = 0;
+       for (var d of dates.values()) {
+              if (date_counter == 0) {
+                     date_start = d;
+                     date_counter++;
+              } else date_end = d;
+       }
+       
+       var x = new Date().toLocaleDateString().split('/');
+       var mm = x[0].toString();
+       var dd = x[1].toString();
+       var yyyy = x[2].toString();
+       if (dd < 10) {
+              dd = '0' + dd;
+       }
+       if (mm < 10) {
+              mm = '0' + mm;
+       }
+       var today = yyyy + "-" + mm + "-" + dd;
 
+       if (date_start.toString() > today || date_end.toString() > today) {
+              alert("You cant search into the future! Please select a decent date range.")
+              valid = 0;
+       }
+
+       if (date_start > date_end) {
+              alert("Start date has to be the same date or be older the end date!")
+              valid = 0;
+       }
+
+       if (date_start == date_end && valid) {
+              search += "&date=" + date_start;
+       }
+       else if (date_start == "" && date_end != "" && valid) {
+              search += "&date=" + date_end;
+       } else if (date_start != "" && date_end == "" && valid) {
+              search += "&date=" + date_start;
+       } else if ((date_start != "" && date_end != "" && valid)) {
+              search += "&date=" + date_start + "," + date_end;
+       }
+
+       //If valid, then search!
        if (valid) {
               console.log("search: " + search)
        }
 }
 
-function setDate() {
-       var today = new Date();
-       var dd = String(today.getDate()).padStart(2, '0');
-       var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-       var yyyy = today.getFullYear();
-       today = yyyy + '-' + mm + '-' + dd;
-
-       document.getElementById("date1").value = today;
-       document.getElementById("date2").value = today;
-}
-
 function setDate2() {
        document.getElementById("date2").value = document.getElementById("date1").value;
 }
-
-
 
 
 /**
