@@ -212,3 +212,12 @@ function populate_news(news) {
         deafult is 0. Why use an offset..? Might be useful.
               - Oh - if you want a "pager". Useful!
  **/
+
+
+/**
+ * ----TODO----
+ * - What if zero news?
+ * - What if nulls in JSON news object
+ * - What if picture-url/no picture-url
+ * - What if title and description is the same?
+ */
