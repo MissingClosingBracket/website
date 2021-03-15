@@ -68,6 +68,12 @@ a, a:visited {
     position: relative;
 }
 
+.content_item_search_date {
+    margin: 1%;
+    text-align: center;
+    position: relative;
+}
+
 .content_image {
     object-fit: cover;
     width: calc(320px + 6vw);
@@ -123,8 +129,7 @@ a, a:visited {
 }
 
 .search_button {
-    margin-left: 50%;
-    margin-right: 50%;
+    align-self: center;
 }
 
 
