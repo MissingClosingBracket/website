@@ -1,20 +1,22 @@
+var offset = 0;
+var search = "";
 
-
-async function getNews() {
+async function getNews(x) {
 
     var requestOptions = {
         method: 'GET'
       };
       
-    fetch("http://api.mediastack.com/v1/news?access_key=4b433178658deb64a15eadfb0c390354&keywords=corona", requestOptions)
+    fetch("http://api.mediastack.com/v1/news?access_key=4b433178658deb64a15eadfb0c390354" + x, requestOptions)
     .then(response => response.text())
-    .then(result => console.log(JSON.parse(result)))
+    .then(result => populate_news(result))
     .catch(error => alert(error));
+
 }
 
 function options_submitted() {
        //build this string
-       var search = "";
+       search = "";
        var valid = 1;
 
        //get the keyword if it exists
@@ -120,14 +122,46 @@ function options_submitted() {
               search += "&date=" + date_start + "," + date_end;
        }
 
+       //Get the sorting option
+       const sort_option = new FormData(document.getElementById("sort"));
+       var option = sort_option.values().next().value;
+       if (option != undefined) {
+              search += "&sort=" + option;
+       }
+
        //If valid, then search!
        if (valid) {
-              console.log("search: " + search)
+              offset = 0;
+              console.log(search);
+              getNews(search + "&offset=0"); //UNCOMMENT TO CALL!!!
        }
 }
 
 function setDate2() {
        document.getElementById("date2").value = document.getElementById("date1").value;
+}
+
+function next_page() {
+       offset += 25;
+       console.log(search);
+       getNews(search + "&offset=" + offset.toString()); //UNCOMMENT TO CALL!!!
+}
+
+function populate_news(news) {
+       var news_json_array = JSON.parse(news).data;
+
+       news_json_array.forEach(element => {
+              console.log(element['author'])
+              console.log(element['category'])
+              console.log(element['country'])
+              console.log(element['description'])
+              console.log(element['image'])
+              console.log(element['language'])
+              console.log(element['published_at'])
+              console.log(element['source'])
+              console.log(element['title'])
+              console.log(element['url'])
+       });
 }
 
 
@@ -167,12 +201,14 @@ function setDate2() {
  
  ** Date: "&date=2020-01-01" or "&date=2020-01-01,2020-12-31"
  
- * Sort: "&sort=[option]"
+ ** Sort: "&sort=[option]"
         published_desc (default), published_asc, popularity
   
  * Limit: "&limit=100"
         default is 25
+        Currently using deafault, guess its fine.
  
- * Offset: "&offset=100"
+ ** Offset: "&offset=100"
         deafult is 0. Why use an offset..? Might be useful.
+              - Oh - if you want a "pager". Useful!
  **/

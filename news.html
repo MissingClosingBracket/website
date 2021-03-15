@@ -147,6 +147,18 @@
                         </div>
                     </form>
                 </div>
+                <div class="content_item_search">
+                    <form id="sort">
+                        <label for="sort">Choose how the articles are sorted:</label>
+                        <br>
+                        <input type="radio" id="Descending" name="sort" value="published_desc">
+                        <label for="male">Descending</label><br>
+                        <input type="radio" id="Ascending" name="sort" value="published_asc">
+                        <label for="female">Ascending</label><br>
+                        <input type="radio" id="Popularity" name="sort" value="popularity">
+                        <label for="other">Popularity</label>
+                    </form>
+                </div>
             </div>
             <div class="content_wrapper">
                 <button class="search_button" onclick="options_submitted()">Search</button>
@@ -173,5 +185,8 @@
         <p>hej</p>
         <p>hej</p>
         <p>hej</p>
+        <div class="content_wrapper">
+            <button class="next_page" onclick="next_page()">See more articles</button>
+        </div>
     </body>
 </html>
