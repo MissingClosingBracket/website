@@ -109,7 +109,7 @@ function options_submitted() {
               valid = 0;
        }
 
-       if (date_start == date_end && valid) {
+       if (date_start == date_end && date_start != "" && valid) {
               search += "&date=" + date_start;
        }
        else if (date_start == "" && date_end != "" && valid) {
@@ -165,7 +165,7 @@ function setDate2() {
  
  ** Keywords: "&keywords=tesla" OBS: only supports one keyword atm. Maybe contact mediastack? TODO
  
- * Date: "&date=2020-01-01" or "&date=2020-01-01,2020-12-31"
+ ** Date: "&date=2020-01-01" or "&date=2020-01-01,2020-12-31"
  
  * Sort: "&sort=[option]"
         published_desc (default), published_asc, popularity
