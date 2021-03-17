@@ -1,5 +1,6 @@
 var offset = 0;
 var search = "";
+var total_articles = 0;
 
 async function getNews(x) {
 
@@ -132,8 +133,9 @@ function options_submitted() {
        //If valid, then search!
        if (valid) {
               offset = 0;
+              total_articles = 0;
               console.log(search);
-              getNews(search + "&offset=0"); //UNCOMMENT TO CALL!!!
+              getNews(search + "&offset=0");
        }
 }
 
@@ -141,15 +143,24 @@ function setDate2() {
        document.getElementById("date2").value = document.getElementById("date1").value;
 }
 
+function previous_page() {
+       offset -= 25;
+       console.log(search);
+       getNews(search + "&offset=" + offset.toString());
+}
+
 function next_page() {
        offset += 25;
        console.log(search);
-       getNews(search + "&offset=" + offset.toString()); //UNCOMMENT TO CALL!!!
+       getNews(search + "&offset=" + offset.toString());
 }
 
 function populate_news(news) {
        var news_json_array = JSON.parse(news).data;
-
+       total_articles = (JSON.parse(news).pagination['total']);
+       console.log(total_articles);
+       console.log(JSON.parse(news).pagination)
+       /*
        news_json_array.forEach(element => {
               console.log(element['author'])
               console.log(element['category'])
@@ -162,6 +173,10 @@ function populate_news(news) {
               console.log(element['title'])
               console.log(element['url'])
        });
+       */
+
+       var news_field = document.getElementById("news_field")
+
 }
 
 
@@ -216,6 +231,8 @@ function populate_news(news) {
 
 /**
  * ----TODO----
+ * - Make buttons logic
+ * - Populate site
  * - What if zero news?
  * - What if nulls in JSON news object
  * - What if picture-url/no picture-url
