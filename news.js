@@ -2,6 +2,7 @@ var offset = 0;
 var search = "";
 var total_articles = 0;
 
+
 async function getNews(x) {
 
     var requestOptions = {
@@ -160,8 +161,46 @@ function populate_news(news) {
        total_articles = (JSON.parse(news).pagination['total']);
        console.log(total_articles);
        console.log(JSON.parse(news).pagination)
-       /*
+
+
+       //Navigation Buttons Logics:
+       var navigate_button_prev = document.getElementById("prev_button");
+       var navigate_button_next = document.getElementById("next_button");
+       if (total_articles > 0) {
+              navigate_button_prev.style.visibility = "visible";
+              navigate_button_next.style.visibility = "visible";
+       }
+
+       if (offset <= 0) {
+              navigate_button_prev.disabled = true;
+       } else navigate_button_prev.disabled = false;
+       if (total_articles - (25 + offset) <= 0) {
+              navigate_button_next.disabled = true;
+       } else navigate_button_next.disabled = false;
+
+       //Nav to put in articles:
+       var news_field = document.getElementById("news_field")
+
+       //Delete old elements if exists:
+       while (news_field.firstChild) {
+              news_field.removeChild(news_field.firstChild);
+       }
+
+
+       //If no articles found: 
+       if (total_articles == 0) {
+              var tag = document.createElement("h3");
+              var text = document.createTextNode("No articles found...");
+              tag.appendChild(text);
+              news_field.appendChild(tag);
+       }
+
+       //Populate site:
        news_json_array.forEach(element => {
+
+              var news_div = document.createElement("div");
+              
+
               console.log(element['author'])
               console.log(element['category'])
               console.log(element['country'])
@@ -173,9 +212,8 @@ function populate_news(news) {
               console.log(element['title'])
               console.log(element['url'])
        });
-       */
 
-       var news_field = document.getElementById("news_field")
+
 
 }
 
