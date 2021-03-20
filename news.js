@@ -189,8 +189,13 @@ function populate_news(news) {
 
        //If no articles found: 
        if (total_articles == 0) {
+
+              //Make nav buttons invisble
+              navigate_button_prev.style.visibility = "hidden";
+              navigate_button_next.style.visibility = "hidden";
+
               var tag = document.createElement("h3");
-              var text = document.createTextNode("No articles found...");
+              var text = document.createTextNode("No articles found... Maybe change one or two parameters to be more inclusive?");
               tag.appendChild(text);
               news_field.appendChild(tag);
        }
@@ -199,18 +204,39 @@ function populate_news(news) {
        news_json_array.forEach(element => {
 
               var news_div = document.createElement("div");
-              
 
-              console.log(element['author'])
+              //title:
+              var title = document.createElement("h2");
+              var title_text = document.createTextNode(element['title']);
+              title.appendChild(title_text);
+              news_div.appendChild(title);
+
+              //description:
+              var description = document.createElement("h4");
+              var description_text = document.createTextNode(element["description"]);
+              description.appendChild(description_text);
+              news_div.appendChild(description);
+
+
+
+
+              console.log(element['author']) //
               console.log(element['category'])
-              console.log(element['country'])
-              console.log(element['description'])
+              console.log(element['country']) //
+              console.log(element['description']) //
               console.log(element['image'])
-              console.log(element['language'])
-              console.log(element['published_at'])
-              console.log(element['source'])
-              console.log(element['title'])
+              console.log(element['language']) //
+              console.log(element['published_at']) //
+              console.log(element['source']) //
+              console.log(element['title']) //*
               console.log(element['url'])
+
+              /**
+               *     <h2>New Tesla shows promising results</h2>
+                     <h4>The new Tesla has just gone through tests and its battery life is out of this world</h4>
+                     <p>Published at "Datetime" by "Author".</p>
+                     <p>Source is "Source", "Country". Written in "Language".</p>
+               */
        });
 
 
