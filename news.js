@@ -245,6 +245,7 @@ function populate_news(news) {
                      <h4>The new Tesla has just gone through tests and its battery life is out of this world</h4>
                      <p>Published at "Datetime" by "Author".</p>
                      <p>Source is "Source", "Country". Written in "Language".</p>
+                     
                */
        });
 
