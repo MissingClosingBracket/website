@@ -217,9 +217,17 @@ function populate_news(news) {
               description.appendChild(description_text);
               news_div.appendChild(description);
 
+              //...
+
+              //br
+              var new_line = document.createElement("br");
+              news_div.appendChild(new_line);
+
+              //Append div to news_field:
+              news_field.appendChild(news_div);
 
 
-
+              /*
               console.log(element['author']) //
               console.log(element['category'])
               console.log(element['country']) //
@@ -230,6 +238,7 @@ function populate_news(news) {
               console.log(element['source']) //
               console.log(element['title']) //*
               console.log(element['url'])
+              */
 
               /**
                *     <h2>New Tesla shows promising results</h2>

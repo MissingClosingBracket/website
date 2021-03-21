@@ -54,6 +54,11 @@ a, a:visited {
     justify-content: center;
 }
 
+.content_wrapper_news_articles {
+    display: block;
+    /*justify-content: left;*/
+}
+
 .content_item {
     width: calc(320px + 6vw);
     height: calc(320px + 6vw);
