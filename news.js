@@ -9,7 +9,7 @@ async function getNews(x) {
         method: 'GET'
       };
       
-    fetch("http://api.mediastack.com/v1/news?access_key=4b433178658deb64a15eadfb0c390354" + x, requestOptions)
+    fetch("https://api.mediastack.com/v1/news?access_key=4b433178658deb64a15eadfb0c390354" + x, requestOptions)
     .then(response => response.text())
     .then(result => populate_news(result))
     .catch(error => alert(error));
